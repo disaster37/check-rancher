@@ -36,9 +36,9 @@ workflows:
   build-workflow:
     jobs:
       - test
-      - build
+      - build:
           requires:
             - test
-      - release
+      - release:
           requires:
             - build
