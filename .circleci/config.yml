@@ -35,10 +35,16 @@ workflows:
   version: 2
   build-workflow:
     jobs:
-      - test
+      - test:
+          filters:
+            tags:
+              only: /.*/
       - build:
           requires:
             - test
+          filters:
+            tags:
+              only: /.*/
       - release:
           requires:
             - build
