@@ -30,7 +30,7 @@ jobs:
       - run: go get github.com/tcnksm/ghr
       - run: sed -i 's/app.Version := "develop"/app.Version := "`git describe --tags`"/' check-rancher.go
       - run: gox -output "dist/ncd_{{.OS}}_{{.Arch}}"
-      - run: ghr -t $GITHUB_TOKEN -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME --replace `git describe --tags` dist/
+      - run: ghr -t $GITHUB_TOKEN -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME $CIRCLE_TAG dist/
 workflows:
   version: 2
   build-workflow:
