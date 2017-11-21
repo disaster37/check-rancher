@@ -17,6 +17,8 @@ var rancherUrl string
 var rancherKey string
 var rancherSecret string
 
+version := "develop"
+
 func main() {
 
 	// Logger setting
@@ -29,7 +31,7 @@ func main() {
 	// CLI settings
 	app := cli.NewApp()
 	app.Usage = "Check some usefull state about your Rancher environment"
-	app.Version = "1.0.0"
+	app.Version = version
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:        "rancher-url",
