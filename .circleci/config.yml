@@ -42,3 +42,8 @@ workflows:
       - release:
           requires:
             - build
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
