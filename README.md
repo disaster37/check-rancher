@@ -22,9 +22,9 @@ You need to set the Rancher API informations for all checks.
 ```
 
 You need to specify the following parameters:
-- *--rancher-url*: It's your rancher URL. If you use `https` with enterprise PKI, you need to add your enterprise CA in the host certificate store.
-- *--rancher-key*: It's the rancher API key that you have generated from Rancher UI (API -> Keys -> Add Account API Key)
-- *--rancher-secret*: It's the secret associated to your API key.
+- **--rancher-url**: It's your rancher URL. If you use `https` with enterprise PKI, you need to add your enterprise CA in the host certificate store.
+- **--rancher-key**: It's the rancher API key that you have generated from Rancher UI (API -> Keys -> Add Account API Key)
+- **--rancher-secret**: It's the secret associated to your API key.
 
 ### Check certificates expiration
 
@@ -35,7 +35,7 @@ You need to lauch the following command:
 ```
 
 You need to specify the following parameters:
-- *--warning-days*: The number of days before certificate expire. In this exemple, if certificate expire in 8 days, it will return warning.
+- **--warning-days**: The number of days before certificate expire. In this exemple, if certificate expire in 8 days, it will return warning.
 
 This check follow this logic:
 1. `OK` when there are no certificate
@@ -47,8 +47,8 @@ This check follow this logic:
 > All certificates that have problem is displayed on messages.
 
 It's return the following perfdata:
-- *nbActifCertificate*: the number of actif certificates
-- *nbExpiredCertificate*: the number of expired certificates 
+- **nbActifCertificate**: the number of actif certificates
+- **nbExpiredCertificate**: the number of expired certificates 
 
 
 ### Check hosts states on project
@@ -60,7 +60,7 @@ You need to lauch the following command:
 ```
 
 You need to specify the following parameters:
-- *--project-name*: The name of your Rancher project that you should to check the hosts state.
+- **--project-name**: The name of your Rancher project that you should to check the hosts state.
 
 This check follow this logic:
 1. `OK` when all hosts are online (active)
@@ -72,8 +72,8 @@ This check follow this logic:
 > All hosts that have problem is displayed on messages.
 
 It's return the following perfdata:
-- *nbHost*: the number of hosts in project
-- *nbHostOnline*: the number of online hosts
+- **nbHost**: the number of hosts in project
+- **nbHostOnline**: the number of online hosts
 
 ### Check the stack state
 
@@ -84,7 +84,7 @@ You need to lauch the following command:
 ```
 
 You need to specify the following parameters:
-- *--stack-name*: The name of your Rancher stack that you should to check the state.
+- **--stack-name**: The name of your Rancher stack that you should to check the state.
 
 This check follow this logic:
 1. `OK` when stack is disabled
@@ -97,12 +97,12 @@ This check follow this logic:
 > All services that have problem is displayed on messages.
 
 It's return the following perfdata:
-- *nbService*: the number of service that composed the stack
-- *nbInstance*: the number of instance that composed the stack
-- *nbServiceOnline*: the number or services that online (even if degraded)
+- **nbService**: the number of service that composed the stack
+- **nbInstance**: the number of instance that composed the stack
+- **nbServiceOnline**: the number or services that online (even if degraded)
 
 For each services:
-- *SERVICE_NAME-nbInstanceOnline*: the number of instance that online for this service
+- **SERVICE_NAME-nbInstanceOnline**: the number of instance that online for this service
 
 
 ## Contribute
