@@ -22,15 +22,20 @@ jobs:
   release:
     docker:
       - image: circleci/golang:1.8
+        environment:
+          - GITHUB_TOKEN: $GITHUB_TOKEN
+          - CIRCLE_PROJECT_USERNAME: $CIRCLE_PROJECT_USERNAME
+          - CIRCLE_PROJECT_REPONAME: $CIRCLE_PROJECT_REPONAME
+          - CIRCLE_TAG: $CIRCLE_TAG
     working_directory: /go/src/github.com/disaster37/check-rancher
     steps:
       - checkout
       - run: go get -v -t -d ./...
       - run: go get github.com/mitchellh/gox
       - run: go get github.com/tcnksm/ghr
-      - run: sed -i 's/app.Version := "develop"/app.Version := "`git describe --tags`"/' check-rancher.go
-      - run: gox -output "dist/ncd_{{.OS}}_{{.Arch}}"
-      - run: ghr -t $GITHUB_TOKEN -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME `git describe --tags` dist/
+      - run: sed -i 's/app.Version := "develop"/app.Version := "$CIRCLE_TAG"/' check-rancher.go
+      - run: gox -output "dist/check-rancher_{{.OS}}_{{.Arch}}"
+      - run: ghr -t $GITHUB_TOKEN -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME $CIRCLE_TAG dist/
 workflows:
   version: 2
   build-workflow:
