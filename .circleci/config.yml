@@ -39,7 +39,7 @@ workflows:
       - build
           requires:
             - test
-      - release:
+      - release
           requires:
             - test
           filters:
