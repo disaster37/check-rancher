@@ -38,8 +38,3 @@ workflows:
       - test
       - build
       - release
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              ignore: /.*/
