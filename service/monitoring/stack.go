@@ -1,9 +1,9 @@
 package monitoringService
 
 import (
+	"fmt"
 	"github.com/disaster37/check-rancher/model/monitoring"
 	"github.com/disaster37/check-rancher/model/stack"
-	"fmt"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 )
@@ -51,6 +51,7 @@ func CheckStack(stack *modelStack.Stack) (*modelMonitoring.Monitoring, error) {
 			// Count the nbInstance online for the current service
 			nbInstanceOnline := 0
 			for _, instance := range service.Instances() {
+				log.Debugf("Instance %s: %s", instance.Name, instance.State)
 				if instance.State == "running" && instance.Transitioning == "no" {
 					nbInstanceOnline++
 				}
