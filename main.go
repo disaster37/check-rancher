@@ -4,7 +4,7 @@ import (
 	"os"
 	"sort"
 
-	"github.com/disaster37/check-rancher/v2/checkrancher"
+	"github.com/disaster37/check-rancher/v1/checkrancher"
 	"github.com/disaster37/go-nagios"
 	log "github.com/sirupsen/logrus"
 	"github.com/urfave/cli/v2"

@@ -1,4 +1,4 @@
-module github.com/disaster37/check-rancher/v2
+module github.com/disaster37/check-rancher/v1
 
 go 1.13
 
