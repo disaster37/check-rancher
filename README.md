@@ -110,5 +110,5 @@ For each services:
 
 ## Contribute
 
-Your PR are welcome, but please use develop branch and not the master branch.
+Your PR are welcome, but please use 2.x branch and not the master branch.
 You can open issues or enhance ;)
