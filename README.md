@@ -1,3 +1,8 @@
+[![build](https://github.com/disaster37/check-rancher/actions/workflows/workflow.yaml/badge.svg)](https://github.com/disaster37/check-rancher/actions/workflows/workflow.yaml)
+[![GoDoc](https://godoc.org/github.com/disaster37/check-rancher/v2?status.svg)](http://godoc.org/github.com/disaster37/check-rancher/v2)
+[![codecov](https://codecov.io/gh/disaster37/check-rancher/branch/2.x/graph/badge.svg)](https://codecov.io/gh/disaster37/check-rancher/branch/2.x)
+
+
 # Check-Rancher
 
 It's a general purpose to monitore Rancher plateform with external monitoring tools like Nagios, Centreon, Shinken, Sensu, etc.
