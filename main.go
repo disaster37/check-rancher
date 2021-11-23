@@ -58,6 +58,14 @@ func run(args []string) error {
 			Name:  "no-color",
 			Usage: "No print color",
 		},
+		&cli.BoolFlag{
+			Name:  "self-signed-certificate",
+			Usage: "Don't check certificate validity. It usefull when use self signed certificate",
+		},
+		&cli.StringSliceFlag{
+			Name: "ca-path",
+			Usage: "List of CA path",
+		}
 	}
 	app.Commands = []*cli.Command{
 		{
