@@ -63,9 +63,9 @@ func run(args []string) error {
 			Usage: "Don't check certificate validity. It usefull when use self signed certificate",
 		},
 		&cli.StringSliceFlag{
-			Name: "ca-path",
+			Name:  "ca-path",
 			Usage: "List of CA path",
-		}
+		},
 	}
 	app.Commands = []*cli.Command{
 		{
